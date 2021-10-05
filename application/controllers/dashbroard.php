@@ -20,7 +20,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 			// {
 				
 			// }
-			$data['template'] ='home/index';
+			$data['template'] ='mes/index';
 			$this->load->view('layout/index',isset($data)? $data :null);
 
 
