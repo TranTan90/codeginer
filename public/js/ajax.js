@@ -2417,10 +2417,10 @@ function cms_detail_input_in_supplier($id) {
 function cms_vsell_import() {
     var $param = {
         'type': 'POST',
-        'url': 'import/cms_vsell_import/',
+        'url': 'mes/cms_vsell_import/',
         'data': null,
         'callback': function (data) {
-            $('.orders').html(data);
+            $('.messys').html(data);
         }
     };
     cms_adapter_ajax($param);
@@ -2466,7 +2466,7 @@ function cms_save_import(type) {
 
         var $param = {
             'type': 'POST',
-            'url': 'import/cms_save_import/' + $store_id,
+            'url': 'mes/cms_save_import/' + $store_id,
             'data': $data,
             'callback': function (data) {
                 if (data == '0') {
