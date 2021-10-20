@@ -26,7 +26,4 @@
 <script  src="public/js/jquery-3.6.0.js"></script>
 <script src="public/js/jquery.js"></script> 
 <script type="text/javascript" src="public/js/main.js"></script>
-<script type="text/javascript" src="public/js/ajax.js"></script>
-
-
 </html>

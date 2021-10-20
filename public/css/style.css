@@ -1,7 +1,7 @@
 div.text-name
 {
-	background-color: #f4f497;
-	margin-top: 20px;
+ margin-top: 20px;
+
 }
 div h3
 {
@@ -14,4 +14,15 @@ button.btnadd
 .main-space
 {
 	height: 30px;
+}
+
+.main-space1 
+{
+	height: 150px;
+}
+
+.btnupadte
+{
+	 float: right;
+	 margin: 15px;
 }
