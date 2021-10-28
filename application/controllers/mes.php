@@ -32,24 +32,13 @@ class Mes extends CI_Controller
 
     public function cms_save_import()
         {   
-              // $data = $this->input->pos('data');
-            $data=array('mes_date'=>2021-10-20);
-
-
-               $this->db->trans_begin();
-
-               $this->db->insert('mes',$data);
+               $data = $this->input->post('data');
+           
+              $sql= $this->db->set($data)->insert('cms_mes',$data);
+           
 
 
 
-            if ($this->db->trans_status() === FALSE)
-            {
-                $this->db->trans_rollback();
-            }
-            else
-            {
-                $this->db->trans_commit();   
-            }
 
         }
 }

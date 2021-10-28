@@ -3,37 +3,20 @@ function cms_comback($url)
      window.location.assign($url);
 }
 
-// function cms_vsell_import() {
-//             $.ajax({
-//                 url: 'mes/cms_vsell_import/',
-//                 data: null,
-//                 type: 'POST',
-//                 async: true,
-//                 success: function (data) {
-//                     $('.messys').html(data);
-//                 }
-//             });
-//      }
-function cms_vsell_import()
-{
-    var $param = {
-            'url':'mes/cms_vsell_import/',
-            'type':'POST',
-             'data':null,
-             async:true,
-             success: function (data) {
-                     $('.messys').html(data);
+function cms_vsell_import() {
+            $.ajax({
+                url: 'mes/cms_vsell_import/',
+                data: null,
+                type: 'POST',
+                async: true,
+                success: function (data) {
+                    $('.messys').html(data);
                 }
-
-
-    };
-
-cms_adapter_ajax($param);
-
-}
+            });
+     }
 
  function  cms_save_import()
- {      "user stric";
+ {    
 
     var $date_input= $('#mesdatetime').val();
     var $sys_input=$('#messysname').val();
@@ -46,9 +29,12 @@ cms_adapter_ajax($param);
   if($nameerro_input.length == 0)
   {
      alert('Vui lòng Nhập Tên Lỗi' );
+     echo
   }
+
  var  $data ={
         'data':{
+                'id':'',
                 'mes_date':$date_input,
                 'hana_sys':$sys_input,
                 'mes_errorcode': $errocode_input,
@@ -59,23 +45,16 @@ cms_adapter_ajax($param);
              }
                 };
 
-      var $param = 
-      {  
-         'type': 'POST',
-         'url':'mes/cms_save_import/',
-         'data':$data,
-         'callback': function(data){
-            $('.showerror').html(data);
-         }
-      };
- cms_adapter_ajax($param);
- }
-function cms_adapter_ajax($param) {
-    $.ajax({
-        url: $param.url,
-        type: $param.type,
-        data: $param.data,
+
+
+     $.ajax({
+        type:'POST',
+        url: 'mes/cms_save_import/',
+        data: $data,
         async: true,
-        success: $param.callback
-    });
-}
+        success: function(data){
+            alert('Success');
+        } 
+     });
+     
+ }
